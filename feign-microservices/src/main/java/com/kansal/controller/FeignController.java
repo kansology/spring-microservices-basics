@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
+@RequestMapping("/feign")
 public class FeignController {
 
     private final FeignService feignService;
@@ -21,7 +22,7 @@ public class FeignController {
         this.feignService = feignService;
     }
 
-    @RequestMapping(method= RequestMethod.GET, value = "/feign/{name}")
+    @RequestMapping(method= RequestMethod.GET, value = "/hello/{name}")
     public String feignHello(@PathVariable("name") String name) {
         return feignService.getName(name);
     }

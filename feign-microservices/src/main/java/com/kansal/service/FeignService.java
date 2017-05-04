@@ -1,5 +1,8 @@
 package com.kansal.service;
 
+import com.kansal.remote.SimpleFeignClient;
+import com.netflix.discovery.converters.Auto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -8,7 +11,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class FeignService {
+
+    private final SimpleFeignClient simpleFeignClient;
+
+    @Autowired
+    public FeignService(SimpleFeignClient simpleFeignClient) {
+        this.simpleFeignClient = simpleFeignClient;
+    }
+
     public String getName(String name) {
-        return null;
+        return simpleFeignClient.getName(name);
     }
 }
