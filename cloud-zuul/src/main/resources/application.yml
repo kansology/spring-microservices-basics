@@ -1,0 +1,24 @@
+server:
+  port: 8765
+
+spring:
+  application:
+    name: cloud-zuul
+
+zuul:
+  routes:
+    simple-microservice:
+      path: /simple/**
+      serviceId: auth-server
+    feign-microservice:
+      path: /feign/**
+      serviceId: feign-microservice
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+
+security:
+  basic:
+    enabled: false
