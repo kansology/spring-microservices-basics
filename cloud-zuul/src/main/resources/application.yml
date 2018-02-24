@@ -9,7 +9,7 @@ zuul:
   routes:
     simple-microservice:
       path: /simple/**
-      serviceId: auth-server
+      serviceId: simple-microservice
     feign-microservice:
       path: /feign/**
       serviceId: feign-microservice

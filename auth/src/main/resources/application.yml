@@ -1,0 +1,19 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: auth-server
+
+logging:
+  level:
+    org.springframework.security: TRACE
+
+security:
+  user:
+    name: root
+    password: password
+  oauth2:
+    client:
+      client-id: kansal
+      client-secret: rudra
